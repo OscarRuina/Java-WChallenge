@@ -7,23 +7,20 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.java.WChallenge.models.User;
-import com.java.WChallenge.services.UserService;
+import com.java.WChallenge.models.Photo;
+import com.java.WChallenge.services.PhotoService;
 
 @RestController
 @RequestMapping("/GET")
-public class UserController {
+public class PhotoController {
 	
 	@Autowired
-	UserService userService;
+	PhotoService photoService;
 	
-	@GetMapping("/users")
-	public List<User> getUsers(){
-		return userService.getUsers();
+	@GetMapping("/photos")
+	public List<Photo> getPhotos(){
+		return photoService.getPhotos();
 	}
-	
-	
-	
 	
 	
 
