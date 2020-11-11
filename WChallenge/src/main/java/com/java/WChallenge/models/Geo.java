@@ -1,15 +1,15 @@
-package com.java.WChallenge.entities;
+package com.java.WChallenge.models;
 
-import javax.persistence.Entity;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-@Entity
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Geo {
 	
 	private String lat;
 	private String lng;
 	
-	public Geo() {} 
-	
+	public Geo() {}
+
 	public Geo(String lat, String lng) {
 		super();
 		this.lat = lat;
@@ -36,8 +36,6 @@ public class Geo {
 	public String toString() {
 		return "Geo [lat=" + lat + ", lng=" + lng + "]";
 	}
-	
-	
 	
 	
 

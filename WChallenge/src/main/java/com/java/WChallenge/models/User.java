@@ -1,15 +1,11 @@
-package com.java.WChallenge.entities;
+package com.java.WChallenge.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-@Entity
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class User {
 	
-	@Id
-	@GeneratedValue
-	private  long id;
+	private long id;
 	private String name;
 	private String username;
 	private String email;
@@ -20,9 +16,10 @@ public class User {
 	
 	public User() {}
 
-	public User(String name, String username, String email, Address address, String phone, String website,
+	public User(long id, String name, String username, String email, Address address, String phone, String website,
 			Company company) {
 		super();
+		this.id = id;
 		this.name = name;
 		this.username = username;
 		this.email = email;
@@ -103,6 +100,8 @@ public class User {
 	}
 	
 	
+
+
 	
 
 }

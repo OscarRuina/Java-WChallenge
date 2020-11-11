@@ -1,8 +1,8 @@
-package com.java.WChallenge.entities;
+package com.java.WChallenge.models;
 
-import javax.persistence.Entity;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-@Entity
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Company {
 	
 	private String name;
