@@ -1,12 +1,12 @@
-package com.java.WChallenge.entities;
+package com.java.WChallenge.models;
 
-import javax.persistence.Entity;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-@Entity
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Address {
 	
 	private String street;
-	private String suit;
+	private String suite;
 	private String city;
 	private String zipcode;
 	private Geo geo;
@@ -21,12 +21,12 @@ public class Address {
 		this.street = street;
 	}
 
-	public String getSuit() {
-		return suit;
+	public String getSuite() {
+		return suite;
 	}
 
-	public void setSuit(String suit) {
-		this.suit = suit;
+	public void setSuite(String suite) {
+		this.suite = suite;
 	}
 
 	public String getCity() {
@@ -55,7 +55,7 @@ public class Address {
 
 	@Override
 	public String toString() {
-		return "Address [street=" + street + ", suit=" + suit + ", city=" + city + ", zipcode=" + zipcode + ", geo="
+		return "Address [street=" + street + ", suite=" + suite + ", city=" + city + ", zipcode=" + zipcode + ", geo="
 				+ geo + "]";
 	}
 	
