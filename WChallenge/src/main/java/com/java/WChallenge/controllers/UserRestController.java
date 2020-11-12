@@ -15,7 +15,7 @@ import com.java.WChallenge.services.UserService;
 public class UserRestController {
 	
 	@Autowired
-	UserService userService;
+	private UserService userService;
 	
 	@GetMapping("GET/users")
 	public List<UserModel> getUsers(){

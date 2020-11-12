@@ -12,20 +12,26 @@ import com.java.WChallenge.models.AlbumModel;
 import com.java.WChallenge.services.AlbumService;
 
 @RestController
-@RequestMapping("/GET")
+@RequestMapping("/")
 public class AlbumRestController {
 	
 	@Autowired
-	AlbumService albumService;
+	private AlbumService albumService;
 	
-	@GetMapping("/albums")
+	@GetMapping("GET/albums")
 	public List<AlbumModel> getAlbums(){
 		return albumService.getAlbums();
 	}
 	
-	@GetMapping("/albums/user/:{userId}")
+	@GetMapping("GET/albums/user/:{userId}")
     public List<AlbumModel> getAlbumsByUser(@PathVariable("userId") long userId)throws Exception{
     	return albumService.getAlbumsByUser(userId);
     }
+	
+	@GetMapping("POST/albums")
+	public String insertAlbums() {
+		albumService.insertAlbums();
+		return "insert albums success";
+	}
 	
 }
