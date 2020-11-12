@@ -1,14 +1,17 @@
 package com.java.WChallenge.models;
 
-public class Album {
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class AlbumModel {
 	
 	private long userId;
 	private long id;
 	private String title;
 	
-	public Album() {}
+	public AlbumModel() {}
 
-	public Album(long userId, long id, String title) {
+	public AlbumModel(long userId, long id, String title) {
 		super();
 		this.userId = userId;
 		this.id = id;
@@ -44,6 +47,4 @@ public class Album {
 		return "Album [userId=" + userId + ", id=" + id + ", title=" + title + "]";
 	}
 	
-	
-
 }

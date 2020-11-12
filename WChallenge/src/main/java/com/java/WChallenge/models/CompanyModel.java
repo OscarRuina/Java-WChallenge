@@ -3,15 +3,15 @@ package com.java.WChallenge.models;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Company {
+public class CompanyModel {
 	
 	private String name;
 	private String catchPhrase;
 	private String bs;
 	
-	public Company() {}
+	public CompanyModel() {}
 
-	public Company(String name, String catchPhrase, String bs) {
+	public CompanyModel(String name, String catchPhrase, String bs) {
 		super();
 		this.name = name;
 		this.catchPhrase = catchPhrase;
@@ -47,6 +47,4 @@ public class Company {
 		return "Company [name=" + name + ", catchPhrase=" + catchPhrase + ", bs=" + bs + "]";
 	}
 	
-	
-
 }

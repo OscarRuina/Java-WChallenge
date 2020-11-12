@@ -3,21 +3,21 @@ package com.java.WChallenge.models;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class User {
+public class UserModel {
 	
 	private long id;
 	private String name;
 	private String username;
 	private String email;
-	private Address address;
+	private AddressModel address;
 	private String phone;
 	private String website;
-	private Company company;
+	private CompanyModel company;
 	
-	public User() {}
+	public UserModel() {}
 
-	public User(long id, String name, String username, String email, Address address, String phone, String website,
-			Company company) {
+	public UserModel(long id, String name, String username, String email, AddressModel address, String phone, String website,
+			CompanyModel company) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -61,11 +61,11 @@ public class User {
 		this.email = email;
 	}
 
-	public Address getAddress() {
+	public AddressModel getAddress() {
 		return address;
 	}
 
-	public void setAddress(Address address) {
+	public void setAddress(AddressModel address) {
 		this.address = address;
 	}
 
@@ -85,11 +85,11 @@ public class User {
 		this.website = website;
 	}
 
-	public Company getCompany() {
+	public CompanyModel getCompany() {
 		return company;
 	}
 
-	public void setCompany(Company company) {
+	public void setCompany(CompanyModel company) {
 		this.company = company;
 	}
 
@@ -99,9 +99,4 @@ public class User {
 				+ address + ", phone=" + phone + ", website=" + website + ", company=" + company + "]";
 	}
 	
-	
-
-
-	
-
 }

@@ -3,15 +3,26 @@ package com.java.WChallenge.models;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Address {
+public class AddressModel {
 	
 	private String street;
 	private String suite;
 	private String city;
 	private String zipcode;
-	private Geo geo;
+	private GeoModel geo;
 	
-	public Address() {}
+	public AddressModel() {}
+	
+	public AddressModel(String street, String suite, String city, String zipcode, GeoModel geo) {
+		super();
+		this.street = street;
+		this.suite = suite;
+		this.city = city;
+		this.zipcode = zipcode;
+		this.geo = geo;
+	}
+
+
 
 	public String getStreet() {
 		return street;
@@ -45,11 +56,11 @@ public class Address {
 		this.zipcode = zipcode;
 	}
 
-	public Geo getGeo() {
+	public GeoModel getGeo() {
 		return geo;
 	}
 
-	public void setGeo(Geo geo) {
+	public void setGeo(GeoModel geo) {
 		this.geo = geo;
 	}
 
@@ -59,6 +70,4 @@ public class Address {
 				+ geo + "]";
 	}
 	
-	
-
 }

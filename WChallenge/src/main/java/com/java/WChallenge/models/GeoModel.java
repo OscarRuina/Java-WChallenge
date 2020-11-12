@@ -3,14 +3,14 @@ package com.java.WChallenge.models;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Geo {
+public class GeoModel {
 	
 	private String lat;
 	private String lng;
 	
-	public Geo() {}
+	public GeoModel() {}
 
-	public Geo(String lat, String lng) {
+	public GeoModel(String lat, String lng) {
 		super();
 		this.lat = lat;
 		this.lng = lng;
@@ -37,6 +37,4 @@ public class Geo {
 		return "Geo [lat=" + lat + ", lng=" + lng + "]";
 	}
 	
-	
-
 }
