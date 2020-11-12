@@ -3,7 +3,7 @@ package com.java.WChallenge.models;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Photo {
+public class PhotoModel {
 	
 	private long albumId;
 	private long id;
@@ -11,9 +11,9 @@ public class Photo {
 	private String url;
 	private String thumbnailUrl;
 	
-	public Photo() {}
+	public PhotoModel() {}
 
-	public Photo(long albumId, long id, String title, String url, String thumbnailUrl) {
+	public PhotoModel(long albumId, long id, String title, String url, String thumbnailUrl) {
 		super();
 		this.albumId = albumId;
 		this.id = id;
@@ -68,6 +68,4 @@ public class Photo {
 				+ thumbnailUrl + "]";
 	}
 	
-	
-
 }

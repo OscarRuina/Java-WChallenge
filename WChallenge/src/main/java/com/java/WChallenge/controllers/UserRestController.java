@@ -7,24 +7,25 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.java.WChallenge.models.User;
+import com.java.WChallenge.models.UserModel;
 import com.java.WChallenge.services.UserService;
 
 @RestController
-@RequestMapping("/GET")
-public class UserController {
+@RequestMapping("/")
+public class UserRestController {
 	
 	@Autowired
 	UserService userService;
 	
-	@GetMapping("/users")
-	public List<User> getUsers(){
+	@GetMapping("GET/users")
+	public List<UserModel> getUsers(){
 		return userService.getUsers();
 	}
 	
+	@GetMapping("POST/users")
+	public String insertUsers() {
+		userService.insertUsers();
+		return "insert users success";
+	}
 	
-	
-	
-	
-
 }
