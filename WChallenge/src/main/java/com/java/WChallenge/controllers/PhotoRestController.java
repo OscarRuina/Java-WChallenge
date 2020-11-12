@@ -11,15 +11,21 @@ import com.java.WChallenge.models.PhotoModel;
 import com.java.WChallenge.services.PhotoService;
 
 @RestController
-@RequestMapping("/GET")
+@RequestMapping("/")
 public class PhotoRestController {
 	
 	@Autowired
 	PhotoService photoService;
 	
-	@GetMapping("/photos")
+	@GetMapping("GET/photos")
 	public List<PhotoModel> getPhotos(){
 		return photoService.getPhotos();
+	}
+	
+	@GetMapping("POST/photos")
+	public String insertPhotos() {
+		photoService.insertPhotos();
+		return "insert photos success";
 	}
 	
 }
