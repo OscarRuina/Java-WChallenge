@@ -32,13 +32,16 @@ public class PhotoService {
 		return photos;
 	}
 	
-	public void insertPhotos() {
-		List<PhotoModel> photos = this.getPhotos();
-		int i = 0;
+	public List<PhotoModel> getPhotosByAlbum(long idAlbum){
+		PhotoModel[] photo = restTemplate.getForObject("https://jsonplaceholder.typicode.com/photos?albumId=" + idAlbum, PhotoModel[].class);
+		List<PhotoModel> photos = Arrays.asList(photo);
+		return photos;
+	}
+	
+	public void insertPhotos(long idAlbum) {
+		List<PhotoModel> photos = this.getPhotosByAlbum(idAlbum);
 		for(PhotoModel p : photos) {
 			photoRepository.save(photoConverter.ModelToEntity(p));
-			i++;
-			if(i == 100)break;
 		}
 		
 	}

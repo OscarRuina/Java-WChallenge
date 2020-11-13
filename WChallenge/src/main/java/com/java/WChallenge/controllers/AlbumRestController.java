@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.java.WChallenge.helpers.ViewRouteHelper;
 import com.java.WChallenge.models.AlbumModel;
 import com.java.WChallenge.services.AlbumService;
 
@@ -31,7 +32,7 @@ public class AlbumRestController {
 	@GetMapping("POST/albums")
 	public String insertAlbums() {
 		albumService.insertAlbums();
-		return "insert albums success";
+		return ViewRouteHelper.INSERTS;
 	}
 	
 }

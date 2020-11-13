@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.java.WChallenge.helpers.ViewRouteHelper;
 import com.java.WChallenge.models.UserModel;
 import com.java.WChallenge.services.UserService;
 
@@ -25,7 +26,7 @@ public class UserRestController {
 	@GetMapping("POST/users")
 	public String insertUsers() {
 		userService.insertUsers();
-		return "insert users success";
+		return ViewRouteHelper.INSERTS;
 	}
 	
 }
