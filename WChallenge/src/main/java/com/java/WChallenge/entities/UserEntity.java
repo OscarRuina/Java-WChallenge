@@ -61,6 +61,9 @@ public class UserEntity {
 	@OneToMany(fetch = FetchType.LAZY , mappedBy = "user" , cascade = {CascadeType.PERSIST , CascadeType.MERGE , CascadeType.DETACH , CascadeType.REFRESH})
 	private Set<AlbumEntity> albums;
 	
+	@OneToMany(mappedBy = "user")
+	private Set<PermitEntity> permits;
+	
 	public UserEntity() {}
 
 	public UserEntity(String name, String username, String email, String phone, String website) {
@@ -158,6 +161,14 @@ public class UserEntity {
 
 	public void setAlbums(Set<AlbumEntity> albums) {
 		this.albums = albums;
+	}
+    
+	public Set<PermitEntity> getPermits() {
+		return permits;
+	}
+
+	public void setPermits(Set<PermitEntity> permits) {
+		this.permits = permits;
 	}
 
 	@Override
