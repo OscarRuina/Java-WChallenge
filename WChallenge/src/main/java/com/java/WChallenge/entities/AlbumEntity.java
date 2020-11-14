@@ -45,6 +45,9 @@ public class AlbumEntity {
 	@OneToMany(fetch = FetchType.LAZY , mappedBy = "album" , cascade = {CascadeType.PERSIST , CascadeType.MERGE , CascadeType.DETACH , CascadeType.REFRESH})
 	private Set<PhotoEntity> photos;
 	
+	@OneToMany(mappedBy = "album")
+	private Set<PermitEntity> permits;
+	
 	public AlbumEntity() {}
 
 	public AlbumEntity(UserEntity user, String title) {
@@ -99,6 +102,14 @@ public class AlbumEntity {
 
 	public void setPhotos(Set<PhotoEntity> photos) {
 		this.photos = photos;
+	}
+	
+	public Set<PermitEntity> getPermits() {
+		return permits;
+	}
+
+	public void setPermits(Set<PermitEntity> permits) {
+		this.permits = permits;
 	}
 
 	@Override
