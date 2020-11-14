@@ -48,12 +48,12 @@ public class PermitEntity {
 	
 	public PermitEntity() {}
 	
-	public PermitEntity(AlbumEntity album, UserEntity user) {
+	public PermitEntity(AlbumEntity album, UserEntity user,boolean read, boolean write) {
 		super();
 		this.album = album;
 		this.user = user;
-		this.read = false;
-		this.write = false;
+		this.read = read;
+		this.write = write;
 	}
 	
 	public long getIdPermit() {
