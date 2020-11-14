@@ -6,5 +6,6 @@ public class ViewRouteHelper {
 	public final static String INSERTS = "inserts success";
 	//sharedAlbum
 	public final static String SHAREDALBUM = "inserts shared album success";
+	public final static String UPDATESHAREDALBUM = "update shared album success";
 
 }
