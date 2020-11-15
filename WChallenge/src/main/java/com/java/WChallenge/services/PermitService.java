@@ -1,5 +1,6 @@
 package com.java.WChallenge.services;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,7 +46,7 @@ public class PermitService {
 		permitRepository.save(permit);
 	}
 	
-	public void insertOrUpdateSharedAlbum(long idAlbum, long idUser,boolean read,boolean write) {
+	public void updateSharedAlbum(long idAlbum, long idUser,boolean read,boolean write) {
 		List<PermitEntity> permits = permitRepository.findAll();
 		for(PermitEntity p : permits) {
 			if(p.getAlbum().getIdAlbum() == idAlbum && p.getUser().getId() == idUser) {
@@ -56,15 +57,13 @@ public class PermitService {
 		}
 	}
 	
-	@SuppressWarnings("null")
-	public List<UserModel> getUserByPermits(long idAlbum,boolean read,boolean write){
-		List<UserModel> users = null;
-		List<PermitEntity> permits = permitRepository.findAll();
-		for(PermitEntity p : permits) {
-			if(p.getAlbum().getIdAlbum() == idAlbum) {
-				//if(p.isRead()  == read && p.isWrite() == write) {
-					users.add(userConverter.EntityToModel(userRepository.findById(p.getUser().getId())));
-				//}
+	public List<UserModel> getUsersPermitsByAlbum(long idAlbum,boolean read,boolean write){
+		List<UserModel> users = new ArrayList<UserModel>();
+		UserEntity u = new UserEntity();
+		for(PermitEntity p : permitRepository.findAll()) {
+			if(p.getAlbum().getIdAlbum() == idAlbum && p.isRead() == read && p.isWrite() == write) {
+				u = userRepository.findById(p.getUser().getId());
+				users.add(userConverter.EntityToModel(u));
 			}
 		}
 		return users;

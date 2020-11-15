@@ -37,7 +37,6 @@ public class UserService {
 		for(UserModel m : users) {
 			userRepository.save(userConverter.ModelToEntity(m));
 		}
-		
 	}
 	
 }

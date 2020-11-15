@@ -12,6 +12,7 @@ import com.java.WChallenge.entities.UserEntity;
 public interface UserRepository extends JpaRepository<UserEntity,Serializable>{
 	
 	public abstract List<UserEntity> findAll();
+	
 	public abstract UserEntity findById(long id);
 	
 }
