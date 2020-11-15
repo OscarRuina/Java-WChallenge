@@ -14,7 +14,7 @@ import com.java.WChallenge.services.PermitService;
 
 @RestController
 @RequestMapping("/")
-public class PermitController {
+public class PermitRestController {
 	
 	@Autowired
 	private PermitService permitService;
