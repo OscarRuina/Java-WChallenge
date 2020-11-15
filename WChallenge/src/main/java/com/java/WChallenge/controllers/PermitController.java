@@ -29,15 +29,14 @@ public class PermitController {
 	@GetMapping("POST/sharedAlbum/update/:{idAlbum}/user/:{idUser}/read={read}/write={write}")
 	public String updateSharedAlbum(@PathVariable("idAlbum")long idAlbum, @PathVariable("idUser")long idUser,
 			@PathVariable("read") boolean read,@PathVariable("write")boolean write) {
-		permitService.insertOrUpdateSharedAlbum(idAlbum, idUser,read,write);
+		permitService.updateSharedAlbum(idAlbum, idUser,read,write);
 		return ViewRouteHelper.UPDATESHAREDALBUM;
 	}
-	//does not working
-	@GetMapping("GET/users/permits/album/:{album}/read={read}/write={write}")
-	public List<UserModel> getUsersByPermits(@PathVariable("idAlbum")long idAlbum,
-			@PathVariable("read") boolean read,@PathVariable("write")boolean write){
-		List<UserModel> users = permitService.getUserByPermits(idAlbum, read, write);
-		return users;
+	
+	@GetMapping("GET/users/album/:{idAlbum}/permits/read:{read}/write:{write}")
+	public List<UserModel> getUsersPermitsByAlbum(@PathVariable("idAlbum")long idAlbum,
+			@PathVariable("read")boolean read,@PathVariable("write")boolean write){
+		return permitService.getUsersPermitsByAlbum(idAlbum,read,write);
 	}
 	
 }
